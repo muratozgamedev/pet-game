@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐾 Pet Game</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="game-page">
+  <header>
+    <div class="logo">🐾 Pet Game</div>
+    <div class="header-right">
+      <div class="coin-box">💰 <span id="coins">0</span></div>
+      <div class="user-box">👤 <span id="usernameLabel">-</span></div>
+      <button id="logoutBtn" class="small-btn">Çıkış</button>
+    </div>
+  </header>
+
+  <main>
+    <aside class="panel left">
+      <h2>🐣 Petlerim</h2>
+      <div id="petList"></div>
+    </aside>
+
+    <section class="panel center">
+      <div id="petView"></div>
+      <h2>🎒 Çantam</h2>
+      <div id="inventoryBar"></div>
+      <div class="action-bar">
+        <button id="marketBtn" class="action-btn">🛒 Market</button>
+        <button id="playBtn" class="action-btn">⚽ Oyna</button>
+        <button id="washBtn" class="action-btn">🧼 Yıka</button>
+      </div>
+    </section>
+
+    <aside class="panel right">
+      <h2>📦 Kasa Aç</h2>
+      <div id="crateArea"></div>
+      <h2>💬 Sohbet</h2>
+      <div id="chatBox"></div>
+      <form id="chatForm">
+        <input type="text" id="chatInput" placeholder="Mesaj yaz..." maxlength="100" autocomplete="off">
+        <button type="submit">➤</button>
+      </form>
+    </aside>
+  </main>
+
+  <div id="marketModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>🛒 Market</h2>
+      <div id="marketList"></div>
+      <button id="closeMarket" class="small-btn">Kapat</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script type="module" src="js/game.js"></script>
+</body>
+</html>
