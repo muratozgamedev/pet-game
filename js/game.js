@@ -286,4 +286,4 @@ let toastTimer;
 function toast(t){ const el=document.getElementById('toast'); el.textContent=t;
   el.classList.remove('hidden'); clearTimeout(toastTimer);
   toastTimer=setTimeout(()=>el.classList.add('hidden'),3500); }
-const esc = s => String(s).replace
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
