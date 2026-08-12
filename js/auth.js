@@ -1,6 +1,16 @@
-import { auth } from './firebase.js';
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged }
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged }
 from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+const app = initializeApp({
+  apiKey: "AIzaSyBK_X3RB1WJWf-iS2Rye6E6d3m8zyMB52k",
+  authDomain: "petgamemultiplayer.firebaseapp.com",
+  projectId: "petgamemultiplayer",
+  storageBucket: "petgamemultiplayer.firebasestorage.app",
+  messagingSenderId: "453104531454",
+  appId: "1:453104531454:web:ff125e353d4d553ed4b2af"
+});
+const auth = getAuth(app);
 
 const msg = document.getElementById('msg');
 const showMsg = (t, c) => { msg.textContent = t; msg.className = 'msg ' + c; };
@@ -20,11 +30,11 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
   showMsg('⏳ Kontrol ediliyor...', 'info');
 
   try {
-    await signInWithEmailAndPassword(auth, email, password); // varsa giriş
+    await signInWithEmailAndPassword(auth, email, password);
   } catch (err) {
     if (['auth/user-not-found', 'auth/invalid-credential', 'auth/invalid-login-credentials'].includes(err.code)) {
       try {
-        await createUserWithEmailAndPassword(auth, email, password); // yoksa OTOMATİK KAYIT
+        await createUserWithEmailAndPassword(auth, email, password);
       } catch (err2) {
         if (err2.code === 'auth/email-already-in-use') showMsg('❌ Bu isim kayıtlı ama şifre yanlış!', 'error');
         else showMsg('❌ ' + err2.code, 'error');
