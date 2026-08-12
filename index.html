@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐾 Pet Game Multiplayer</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; text-align: center; padding: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; margin: 0; }
+        .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: inline-block; max-width: 400px; }
+        h1 { color: #333; margin-bottom: 10px; }
+        p { color: #666; margin-bottom: 25px; }
+        button { background: #4285F4; color: white; border: none; padding: 14px 28px; border-radius: 12px; cursor: pointer; font-size: 16px; font-weight: bold; transition: all 0.3s; }
+        button:hover { background: #357ae8; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(66,133,244,0.4); }
+        #userStatus { margin-top: 25px; font-weight: bold; font-size: 18px; padding: 15px; border-radius: 10px; }
+        .success { background: #e6f4ea; color: #1e8e3e; }
+        .error { background: #fce8e6; color: #d93025; }
+        .waiting { background: #f1f3f4; color: #5f6368; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🐾 Pet Game</h1>
+        <p>Altyapı Testi - Firebase + GitHub Pages</p>
+        <button id="loginBtn">Google ile Giriş Yap</button>
+        <div id="userStatus" class="waiting">⏳ Giriş yapılmadı</div>
+    </div>
+    
+    <script type="module" src="js/firebase.js"></script>
+</body>
+</html>
